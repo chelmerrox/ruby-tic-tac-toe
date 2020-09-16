@@ -28,33 +28,31 @@ def print_board(plays)
 end
 
 puts print_board(plays)
-
+play = ''
 def catch_play
-  while play == ''
-    play = ''
+  @play = ''
+  while @play == ''
     begin
-      play = gets.chomp.to_i
+      @play = gets.chomp.to_i
     rescue
       'Ops, it seems you did not type a number between 1-9'
     end
   end  
 end
 
+call_for_play_phrases = ["So now, PLAYER, could you please start the game choosing one of the slots in the board?","PLAYER, now it's your turn!","PLAYER}, no more. Choose your slot please.", "PLAYER, please don't let your oponent's plan to conquer the world be sucessful!", "PLAYER, breath and think twice your next play, it can be not so easy as you think!"]
+
+comment_play_phrases = ["Huummm... wise fox play!","WoW! I'm noticing this will be a giant's game!","Huummm!","ok",'Hey, how many years did you study this game?',"Couldn't you think something better than this??","Well I don't like this play, but anyway...","You never played this before, right?","... so amateur","Wow!!! Now I see your potential!"]
+
 9.times do |i|
   if i.even?
     player = player_one_name.dup 
-    puts "#{player}, now it's your turn!"
-    puts catch_play
-    plays[play - 1] = 'X'
-    puts "Huummm... wise fox play!"
-    puts print_board
+    char = 'X'
   else
     player = player_two_name.dup 
-    puts "#{player}, now it's your turn!"
-    puts catch_play
-    plays[play - 1] = 'O'
-    puts "WoW! I'm noticing this will be a giant's game!"
-    puts print_board 
+    char = 'O'
   end
-
+  puts call_for_play_phrases[rand(call_for_play_phrases.size - 1)].gsub('PLAYER',player)
+  catch_play
+  plays[play - 1] = play
 end
