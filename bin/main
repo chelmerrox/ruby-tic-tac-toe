@@ -1,3 +1,3 @@
-#!/usr/bin/env ruby
+chmod 755 greeter.rb#!/usr/bin/env ruby
 
 puts 'Hello'
