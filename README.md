@@ -1,4 +1,4 @@
-# Capstone Project (Online shop)
+# Tic-Tac-Toe Game
 
 > In this project, we were required to build a Tic-Tac-Toe game.
 
