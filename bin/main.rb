@@ -64,6 +64,22 @@ comment_play_phrases << 'You never played this before, right?'
 comment_play_phrases << '... so amateur'
 comment_play_phrases << 'Wow!!! Now I see your potential!'
 
+def check_winner(plays, player_one_name, player_two_name)
+  winner_boards = [[1, 2, 3], [1, 4, 7], [1, 5, 9], [2, 5, 8], [3, 5, 7], [3, 6, 9], [4, 5, 6], [7, 8, 9]]
+  win = true
+  winner_boards.each do |board|
+    win = true
+    first_char = plays[board[0] - 1]
+    puts "first_char = #{first_char}"
+    evaluated_player = first_char == 'X' ? player_one_name : player_two_name 
+    puts "board #{board} = [#{board[0] - 1}, #{board[1] - 1}, #{board[0] - 1}"
+    board.each do |slot|
+      win = false unless plays[slot - 1] == first_char
+    end
+  end
+  return win
+end
+
 9.times do |i|
   char = 'X'
   if i.even?
@@ -76,6 +92,11 @@ comment_play_phrases << 'Wow!!! Now I see your potential!'
   play = catch_play(plays)
   plays[play - 1] = char
   puts print_board(plays)
+  puts "check_winner = #{check_winner(plays, player_one_name, player_two_name)}"
+  if check_winner(plays, player_one_name, player_two_name) == true  
+    puts "Congratulations, #{player}! You are the winner!"
+    break
+  end 
 end
 
 # rubocop:enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
