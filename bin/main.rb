@@ -66,18 +66,16 @@ comment_play_phrases << 'Wow!!! Now I see your potential!'
 
 def check_winner(plays, player_one_name, player_two_name)
   winner_boards = [[1, 2, 3], [1, 4, 7], [1, 5, 9], [2, 5, 8], [3, 5, 7], [3, 6, 9], [4, 5, 6], [7, 8, 9]]
-  win = true
+  win = false
   winner_boards.each do |board|
-    win = true
     first_char = plays[board[0] - 1]
-    puts "first_char = #{first_char}"
+    # puts "first_char = #{first_char}"
     evaluated_player = first_char == 'X' ? player_one_name : player_two_name 
-    puts "board #{board} = [#{board[0] - 1}, #{board[1] - 1}, #{board[0] - 1}"
-    board.each do |slot|
-      win = false unless plays[slot - 1] == first_char
-    end
+    # puts "board #{board} = [#{plays[board[0] - 1]}, #{plays[board[1] - 1]}, #{plays[board[2] - 1]}]"
+    win = [plays[board[0] - 1], plays[board[1] - 1], plays[board[2] - 1]] == [first_char, first_char, first_char]
+    break if win
   end
-  return win
+  win
 end
 
 9.times do |i|
