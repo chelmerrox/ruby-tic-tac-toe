@@ -19,7 +19,7 @@ gets.chomp
 
 puts "Ok #{player_one_name} and #{player_two_name}, lets to the nuts and bolts!"
 puts 'Here is the board of your game, with the respective number for each position, ok?'
-plays = [1,2,3,4,5,6,7,8,9]
+$plays = [1,2,3,4,5,6,7,8,9]
 
 def print_board(plays)
   puts " #{plays[0]} | #{plays[1]} | #{plays[2]}"
@@ -27,15 +27,15 @@ def print_board(plays)
   puts " #{plays[6]} | #{plays[7]} | #{plays[8]}"
 end
 
-puts print_board(plays)
+puts print_board($plays)
 play = ''
 def catch_play
-  @play = ''
-  while @play == ''
-      @play = gets.chomp.to_i
-      puts "1 - plays[@play - 1] = #{plays[@play - 1]}"
-      if plays[@play - 1] == 'X' || plays[@play - 1] == 'O'
-        @play = ''
+  play = ''
+  while play == ''
+      play = gets.chomp.to_i
+      puts "1 - plays[play - 1] = #{$plays[play - 1]}"
+      if $plays[play - 1] == 'X' || $plays[play - 1] == 'O'
+        play = ''
         puts 'Ops, it seems someone already choosen this slot before :/'
       end
     begin
@@ -52,16 +52,16 @@ call_for_play_phrases = ["So now, PLAYER, could you please choose one of the slo
 comment_play_phrases = ["Huummm... wise fox play!","WoW! I'm noticing this will be a giant's game!","Huummm!","ok",'Hey, how many years did you study this game?',"Couldn't you think something better than this??","Well I don't like this play, but anyway...","You never played this before, right?","... so amateur","Wow!!! Now I see your potential!"]
 
 9.times do |i|
+  char = 'X'
   if i.even?
     player = player_one_name.dup 
-    char = 'X'
   else
     player = player_two_name.dup 
     char = 'O'
   end
   puts call_for_play_phrases[rand(call_for_play_phrases.size - 1)].gsub('PLAYER',player)
   play = catch_play
-  plays[play - 1] = char
-  puts "2 - plays[@play - 1] = #{plays[@play - 1]}"
+  $plays[play - 1] = char
+  puts "2 - plays[@play - 1] = #{$plays[@play - 1]}"
   puts print_board(plays)
 end
