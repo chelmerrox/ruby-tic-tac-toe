@@ -16,11 +16,11 @@ This game is very simple:
 ![board2](board2.png)
 
 - Each slot can be selected only once
-- The winner is the first player that 3 consecutive slots (aligned vertically, horizontally or diagonally), like the example above (where the player 'X' won due to the last horizontal line filled with 'X'):
-g
+- The winner is the first player that 3 consecutive slots (aligned vertically, horizontally or diagonally, like the example above (where the player 'X' won due to the last horizontal line filled with 'X'):
+ 
 ![board3](board3.png)
 
-![screenshot](screenshot.png)
+![screenshot](screenshot.PNG)
 
 ## Built With
 
