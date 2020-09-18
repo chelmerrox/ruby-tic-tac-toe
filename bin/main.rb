@@ -1,4 +1,4 @@
-# rubocop:disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
+# rubocop:disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity, Metrics/MethodLength
 
 #!/usr/bin/env ruby
 
@@ -80,4 +80,4 @@ comment_play_phrases << 'Wow!!! Now I see your potential!'
   puts print_board($plays)
 end
 
-# rubocop:enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
+# rubocop:enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity, Metrics/MethodLength
