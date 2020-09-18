@@ -69,9 +69,7 @@ def check_winner(plays, player_one_name, player_two_name)
   win = false
   winner_boards.each do |board|
     first_char = plays[board[0] - 1]
-    # puts "first_char = #{first_char}"
     evaluated_player = first_char == 'X' ? player_one_name : player_two_name 
-    # puts "board #{board} = [#{plays[board[0] - 1]}, #{plays[board[1] - 1]}, #{plays[board[2] - 1]}]"
     win = [plays[board[0] - 1], plays[board[1] - 1], plays[board[2] - 1]] == [first_char, first_char, first_char]
     break if win
   end
