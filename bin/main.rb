@@ -64,7 +64,7 @@ comment_play_phrases << 'You never played this before, right?'
 comment_play_phrases << '... so amateur'
 comment_play_phrases << 'Wow!!! Now I see your potential!'
 
-def check_winner(plays, player_one_name, player_two_name)
+def check_winner(plays)
   winner_boards = [[1, 2, 3], [1, 4, 7], [1, 5, 9], [2, 5, 8], [3, 5, 7], [3, 6, 9], [4, 5, 6], [7, 8, 9]]
   win = false
   winner_boards.each do |board|
@@ -88,7 +88,7 @@ end
   plays[play - 1] = char
   puts print_board(plays)
   puts "check_winner = #{check_winner(plays, player_one_name, player_two_name)}"
-  if check_winner(plays, player_one_name, player_two_name) == true
+  if check_winner(plays) == true
     puts "Congratulations, #{player}! You are the winner!"
     break
   end
