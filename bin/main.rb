@@ -1,6 +1,6 @@
-# rubocop:disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity, Metrics/MethodLength
+# rubocop:disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity, Metrics/ModuleLength
 
-#!/usr/bin/env ruby
+#!/usr/bin/env ruby 
 
 puts 'Welcome to our Tic-Tac-Toe Game!'
 
@@ -80,4 +80,4 @@ comment_play_phrases << 'Wow!!! Now I see your potential!'
   puts print_board($plays)
 end
 
-# rubocop:enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity, Metrics/MethodLength
+# rubocop:enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity, Metrics/ModuleLength
