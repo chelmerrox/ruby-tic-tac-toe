@@ -1,4 +1,4 @@
-# rubocop:disable Metrics/ModuleLength, Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity, Metrics/MethodLength
+# rubocop:disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
 
 #!/usr/bin/env ruby
 
@@ -44,7 +44,8 @@ end
 
 call_for_play_phrases = []
 call_for_play_phrases << 'So now, PLAYER, could you please choose one of the slots in the board?'
-call_for_play_phrases << 'PLAYER, now it\'s your turn!', 'PLAYER, no more. Choose your slot please.'
+call_for_play_phrases << 'PLAYER, now it\'s your turn!'
+call_for_play_phrases << 'PLAYER, no more. Choose your slot please.'
 call_for_play_phrases << 'PLAYER, please choose your slot and don\'t let your oponent\'s plan to conquer the world be sucessful!'
 call_for_play_phrases << 'PLAYER, breath and think twice your next slot, it can be not so easy as you think!'
 call_for_play_phrases << 'PLAYER, what are you waiting for choose your slot??'
@@ -53,7 +54,8 @@ call_for_play_phrases << 'PLAYER, we are waiting for you...'
 call_for_play_phrases << 'PLAYER, please don\'t make us wait more'
 
 comment_play_phrases = []
-comment_play_phrases << 'Huummm... wise fox play!', 'WoW! I\'m noticing this will be a giant\'s game!'
+comment_play_phrases << 'Huummm... wise fox play!'
+comment_play_phrases << 'WoW! I\'m noticing this will be a giant\'s game!'
 comment_play_phrases << 'Huummm!'
 comment_play_phrases << 'ok'
 comment_play_phrases << 'Hey, how many years did you study this game?'
@@ -78,4 +80,4 @@ comment_play_phrases << 'Wow!!! Now I see your potential!'
   puts print_board($plays)
 end
 
-# rubocop:enable Metrics/ModuleLength, Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity, Metrics/MethodLength
+# rubocop:enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
