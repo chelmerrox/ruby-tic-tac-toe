@@ -32,19 +32,15 @@ play = ''
 def catch_play
   play = ''
   while play == ''
-      play = gets.chomp.to_i
-      puts "1 - plays[play - 1] = #{$plays[play - 1]}"
-      if $plays[play - 1] == 'X' || $plays[play - 1] == 'O'
-        play = ''
-        puts 'Ops, it seems someone already choosen this slot before :/'
-      end
-    begin
-
-    rescue
-      "Hey #{player}, it seems you did not type a number between 1-9"
+    play = gets.chomp.to_i
+    puts "1 - plays[play - 1] = #{$plays[play - 1]}"
+    if $plays[play - 1] == 'X' || $plays[play - 1] == 'O'
+      play = ''
+      puts 'Ops, it seems someone already choosen this slot before :/'
     end
-  end  
-  @play
+    puts "Hey #{player}, it seems you did not type a number between 1-9" unless play.is_a?(Integer) || play > 9
+  end
+  play
 end
 
 call_for_play_phrases = ["So now, PLAYER, could you please choose one of the slots in the board?","PLAYER, now it's your turn!","PLAYER, no more. Choose your slot please.", "PLAYER, please choose your slot and don't let your oponent's plan to conquer the world be sucessful!", "PLAYER, breath and think twice your next slot, it can be not so easy as you think!"]
@@ -61,7 +57,7 @@ comment_play_phrases = ["Huummm... wise fox play!","WoW! I'm noticing this will 
   end
   puts call_for_play_phrases[rand(call_for_play_phrases.size - 1)].gsub('PLAYER',player)
   play = catch_play
+  puts "play = #{play}"
   $plays[play - 1] = char
-  puts "2 - plays[@play - 1] = #{$plays[@play - 1]}"
-  puts print_board(plays)
+  puts print_board($plays)
 end
