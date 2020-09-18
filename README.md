@@ -5,9 +5,7 @@ This game is very simple:
 
 - There is a board like the enumerated board above:
 
-   1 | 2 | 3
-   4 | 5 | 6
-   7 | 8 | 9
+![board1](board1.png)
 
 - Player1 is assigned to 'X' character
 - Player2 is assigned to 'O' character
@@ -15,16 +13,12 @@ This game is very simple:
 - Each play, the actual player can choose one of the 9 slots and fill with his/her character
 - So, the board start to seems like this:
 
-   X | X |  
-     | O |  
-     |   | X
+![board2](board2.png)
 
 - Each slot can be selected only once
-- The winner is the first player that 3 consecutive slots (aligned vertically, horizontally or diagonally), like the example above (where the player 'X' won due to the first horizontal line filled with 'X'):
+- The winner is the first player that 3 consecutive slots (aligned vertically, horizontally or diagonally), like the example above (where the player 'X' won due to the last horizontal line filled with 'X'):
 
-   X | X | X
-     | O |  
-     |   | X
+![board3](board3.png)
 
 ![screenshot](screenshot.png)
 
@@ -70,4 +64,4 @@ This project is open-licensed.
 
 ## 📝 Credits
 
-This project is based on Zattix design created by Mohammed Awad (https://www.behance.net/gallery/24796463/ZATTIX)
+This project was done by Luciano Sarno and Losaline Rokocakau
