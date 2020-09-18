@@ -28,22 +28,12 @@ def print_board(plays)
 end
 
 puts print_board($plays)
-play = ''
 def catch_play
-  play = ''
-  unless play.is_a?(Integer)
-    play = gets.chomp
+  play = play.to_i
+  while $plays[play - 1] == 'X' || $plays[play - 1] == 'O' || !(play.to_i > 0 && play.to_i <= 9)
+    play = gets.chomp.to_i
     puts "play1 = #{play}"
-    puts "Hey #{$player}, it seems you did not type a number between 1-9" unless play.to_i > 0 && play.to_i <= 9
-  end
-  play = play.to_i  
-  while $plays[play - 1] == 'X' || $plays[play - 1] == 'O'
-    puts 'Ops, it seems someone already choosen this slot before :/'
-    play = gets.chomp
-    puts "play2 = #{play}"
-    if $plays[play - 1] == 'X' || $plays[play - 1] == 'O'
-      play = ''
-    end
+    puts 'Ops, it seems you did not type a number between 1-9 OR someone already choosen this slot before :/' if $plays[play - 1] == 'X' || $plays[play - 1] == 'O' || !(play.to_i > 0 && play.to_i <= 9)
   end
   play
 end
