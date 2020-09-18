@@ -1,7 +1,9 @@
 # Tic-Tac-Toe Game
 
 > In this project, we were required to build a Tic-Tac-Toe game.
-This game is very simple:
+
+# Game Rules
+This game rules are very simple:
 
 - There is a board like the enumerated board above:
 
@@ -20,6 +22,14 @@ This game is very simple:
  
 ![board3](board3.png)
 
+# How to install
+- Download or clone the repository's files github repo
+- Have Ruby 2.7 installed (to check if it is installed you can run: ruby -version in your console)
+- Once repo is downloaded to local directory, in you console run cmd: ruby bin/main.rb
+- Enjoy the game!
+
+
+# Screenshot
 ![screenshot](screenshot.PNG)
 
 ## Built With
