@@ -32,12 +32,16 @@ play = ''
 def catch_play
   @play = ''
   while @play == ''
-    begin
       @play = gets.chomp.to_i
-      return @play unless plays[@play - 1] != 'X' || plays[@play - 1] != 'O'
-      puts 'Ops, it seems someone already choosen this slot before :/'
+      puts "1 - plays[@play - 1] = #{plays[@play - 1]}"
+      if plays[@play - 1] == 'X' || plays[@play - 1] == 'O'
+        @play = ''
+        puts 'Ops, it seems someone already choosen this slot before :/'
+      end
+    begin
+
     rescue
-      'Ops, it seems you did not type a number between 1-9'
+      "Hey #{player}, it seems you did not type a number between 1-9"
     end
   end  
   @play
@@ -58,5 +62,6 @@ comment_play_phrases = ["Huummm... wise fox play!","WoW! I'm noticing this will 
   puts call_for_play_phrases[rand(call_for_play_phrases.size - 1)].gsub('PLAYER',player)
   play = catch_play
   plays[play - 1] = char
+  puts "2 - plays[@play - 1] = #{plays[@play - 1]}"
   puts print_board(plays)
 end
