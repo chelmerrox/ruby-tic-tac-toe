@@ -69,7 +69,6 @@ def check_winner(plays, player_one_name, player_two_name)
   win = false
   winner_boards.each do |board|
     first_char = plays[board[0] - 1]
-    evaluated_player = first_char == 'X' ? player_one_name : player_two_name 
     win = [plays[board[0] - 1], plays[board[1] - 1], plays[board[2] - 1]] == [first_char, first_char, first_char]
     break if win
   end
@@ -89,10 +88,10 @@ end
   plays[play - 1] = char
   puts print_board(plays)
   puts "check_winner = #{check_winner(plays, player_one_name, player_two_name)}"
-  if check_winner(plays, player_one_name, player_two_name) == true  
+  if check_winner(plays, player_one_name, player_two_name) == true
     puts "Congratulations, #{player}! You are the winner!"
     break
-  end 
+  end
 end
 
 # rubocop:enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
