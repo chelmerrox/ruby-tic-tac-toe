@@ -1,4 +1,6 @@
-# rubocop:disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
+# rubocop: disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity, allowed_var?(global_var) = true
+
+
 
 # !/usr/bin/env ruby
 
