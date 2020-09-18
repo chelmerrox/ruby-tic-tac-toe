@@ -1,6 +1,4 @@
-# rubocop: disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity, allowed_var?(global_var) = true
-
-
+# rubocop:disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
 
 # !/usr/bin/env ruby
 
@@ -23,7 +21,7 @@ gets.chomp
 
 puts "Ok #{player_one_name} and #{player_two_name}, lets to the nuts and bolts!"
 puts 'Here is the board of your game, with the respective number for each position, ok?'
-$plays = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+plays = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 def print_board(plays)
   puts " #{plays[0]} | #{plays[1]} | #{plays[2]}"
@@ -31,12 +29,12 @@ def print_board(plays)
   puts " #{plays[6]} | #{plays[7]} | #{plays[8]}"
 end
 
-puts print_board($plays)
-def catch_play
+puts print_board(plays)
+def catch_play(plays)
   play = play.to_i
-  while $plays[play - 1] == 'X' || $plays[play - 1] == 'O' || !(play.to_i.positive? && play.to_i <= 9)
+  while plays[play - 1] == 'X' || plays[play - 1] == 'O' || !(play.to_i.positive? && play.to_i <= 9)
     play = gets.chomp.to_i
-    if $plays[play - 1] == 'X' || $plays[play - 1] == 'O' || !(play.to_i.positive? && play.to_i <= 9)
+    if plays[play - 1] == 'X' || plays[play - 1] == 'O' || !(play.to_i.positive? && play.to_i <= 9)
       puts 'Ops, it seems you did not type a number between 1-9 OR someone already choosen this slot before :/'
     end
   end
@@ -75,9 +73,9 @@ comment_play_phrases << 'Wow!!! Now I see your potential!'
     char = 'O'
   end
   puts call_for_play_phrases[rand(call_for_play_phrases.size - 1)].gsub('PLAYER', player)
-  play = catch_play
-  $plays[play - 1] = char
-  puts print_board($plays)
+  play = catch_play(plays)
+  plays[play - 1] = char
+  puts print_board(plays)
 end
 
 # rubocop:enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
