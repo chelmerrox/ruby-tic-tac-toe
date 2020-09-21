@@ -78,13 +78,16 @@ def check_winner(plays, winner_boards)
 end
 
 def check_draw(plays, winner_boards)
+    draw = true
+
     winner_boards.each do |board|
-      puts "board & ['X'] = #{board & [['X']]}"
-      puts "board & ['O'] = #{board & [['O']]}"
-      return true unless board & [['X']] == [] && board & [['O']] == [[]]
+      winner_board = [plays[board[0] - 1], plays[board[1] - 1], plays[board[2] - 1]]
+      puts "winner_board & ['X'] = #{winner_board & ['X']}"
+      puts "winner_board & ['O'] = #{winner_board & ['O']}"
+      draw = false if winner_board & ['X'] == [] || winner_board & ['O'] == []
     end
 
-    false
+    draw
 end
 
 9.times do |i|
