@@ -77,6 +77,14 @@ def check_winner(plays, winner_boards)
   win
 end
 
+def check_draw(plays, winner_boards)
+    winner_boards.each do |board|
+      return true unless board & ['X'] == [] && board & ['O'] == []
+    end
+
+    false
+end
+
 9.times do |i|
   char = 'X'
   if i.even?
@@ -92,6 +100,9 @@ end
   puts "check_winner = #{check_winner(plays, winner_boards)}"
   if check_winner(plays, winner_boards) == true
     puts "Congratulations, #{player}! You are the winner!"
+    break
+  elsif check_draw(plays, winner_boards) == true
+    puts "It's a draw!"
     break
   end
 end
