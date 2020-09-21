@@ -26,7 +26,7 @@ This game rules are very simple:
 - Download or clone the repository's files github repo
 - Have Ruby 2.7 installed (to check if it is installed you can run: ruby -version in your console)
 - Once repo is downloaded to local directory, in you console run cmd: ruby bin/main.rb
-- Enjoy the game!
+- Enjoy the game!!
 
 
 # Screenshot
