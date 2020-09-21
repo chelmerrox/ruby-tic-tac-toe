@@ -2,7 +2,7 @@
 
 # !/usr/bin/env ruby
 
-require '../lib/classes.rb'
+require_relative '../lib/classes.rb'
 
 puts 'Welcome to our Tic-Tac-Toe Game!'
 
