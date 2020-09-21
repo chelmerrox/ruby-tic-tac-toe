@@ -35,14 +35,8 @@ gets.chomp
 puts "Ok #{player_one.name} and #{player_two.name}, lets to the nuts and bolts!"
 puts 'Here is the board of your game, with the respective number for each position, ok?'
 plays = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-def print_board(plays)
-  puts " #{plays[0]} | #{plays[1]} | #{plays[2]}"
-  puts " #{plays[3]} | #{plays[4]} | #{plays[5]}"
-  puts " #{plays[6]} | #{plays[7]} | #{plays[8]}"
-end
-
-puts print_board(plays)
+gameboard_instance = Gameboard.new
+puts gameboard_instance.print_board(plays)
 def catch_play(plays)
   play = play.to_i
   while plays[play - 1] == 'X' || plays[play - 1] == 'O' || !(play.to_i.positive? && play.to_i <= 9)
@@ -88,7 +82,7 @@ comment_play_phrases << 'Wow!!! Now I see your potential!'
   puts call_for_play_phrases[rand(call_for_play_phrases.size - 1)].gsub('PLAYER', player)
   play = catch_play(plays)
   plays[play - 1] = char
-  puts print_board(plays)
+  puts gameboard_instance.print_board(plays)
   game_instance = Game.new
   if game_instance.check_winner(plays) == true
     puts "Congratulations, #{player}! You are the winner!"
