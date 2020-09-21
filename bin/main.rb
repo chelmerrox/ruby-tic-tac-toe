@@ -9,16 +9,16 @@ puts 'Welcome to our Tic-Tac-Toe Game!'
 puts 'Player 1, please type your beautiful name?'
 player_one = Player.new(gets.chomp, 'X')
 puts "Nice name #{player_one.name}!"
-puts 'Please, notice that, from now on, you are going to be represented by the "X" characters on the board, right?'
+puts 'Players, you are going to be represented by the "X" characters on the board, right? (Press enter to continue)'
 gets.chomp
 
 puts 'Player 2, how could we call this beautiful face?'
 player_two = Player.new(gets.chomp, 'O')
 puts "Huuummmm #{player_two.name}, I was pretty aware that your name would be also beautiful!"
-puts "As #{player_one.name} is already using the 'X' character, you are going to be the 'O' character, nice?"
+puts "#{player_two.name}, you are going to be the 'O' character, nice? (Press enter to continue)"
 gets.chomp
 
-puts "#{player_one.name} and #{player_two.name}, please promise me you won't forget your characters?"
+puts "#{player_one.name} and #{player_two.name}, swear you won't forget your characters? (Press enter to continue)"
 gets.chomp
 
 puts "Ok #{player_one.name} and #{player_two.name}, lets to the nuts and bolts!"
