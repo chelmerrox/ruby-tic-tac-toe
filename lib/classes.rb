@@ -13,8 +13,6 @@ end
 
 
 class Game 
-  attr_writer :board
-
   def initialize
   end
 
