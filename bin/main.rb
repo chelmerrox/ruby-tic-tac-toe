@@ -79,7 +79,9 @@ end
 
 def check_draw(plays, winner_boards)
     winner_boards.each do |board|
-      return true unless board & ['X'] == [] && board & ['O'] == []
+      puts "board & ['X'] = #{board & [['X']]}"
+      puts "board & ['O'] = #{board & [['O']]}"
+      return true unless board & [['X']] == [] && board & [['O']] == [[]]
     end
 
     false
