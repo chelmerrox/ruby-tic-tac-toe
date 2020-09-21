@@ -9,7 +9,7 @@ puts 'Welcome to our Tic-Tac-Toe Game!'
 puts 'Player 1, please type your beautiful name?'
 player_one = Player.new(gets.chomp, 'X')
 puts "Nice name #{player_one.name}!"
-puts 'Please, notice that, from now on, you are going to be represented by the "X" characters on the board, right?'
+puts 'Please, notice that, from now on, you are going to be represented by the "X" characters on the board, right? (Press enter to continue)'
 gets.chomp
 
 puts 'Player 2, how could we call this beautiful face?'
