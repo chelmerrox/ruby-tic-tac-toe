@@ -23,7 +23,7 @@ while player_two_name == ''
   puts 'Hey, please, tell us your name :)'
   player_two_name = gets.chomp
 end
-player_two = Player.new(player_two_name,'O')
+player_two = Player.new(player_two_name, 'O')
 
 puts "Huuummmm #{player_two.name}, I was pretty aware that your name would be also beautiful!"
 puts "As #{player_one.name} is already using the 'X' character, you are going to be the 'O' character, nice?"
