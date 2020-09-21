@@ -46,16 +46,21 @@ end
 
 gameboard_instance = Gameboard.new
 puts gameboard_instance.print_board(plays)
-def catch_play(plays)
-  play = play.to_i
-  while plays[play - 1] == 'X' || plays[play - 1] == 'O' || !(play.to_i.positive? && play.to_i <= 9)
-    play = gets.chomp.to_i
-    if plays[play - 1] == 'X' || plays[play - 1] == 'O' || !(play.to_i.positive? && play.to_i <= 9)
-      puts 'Ops, it seems you did not type a number between 1-9 OR someone already choosen this slot before :/'
+
+class Gameplay
+  def catch_play(plays)
+    play = play.to_i
+    while plays[play - 1] == 'X' || plays[play - 1] == 'O' || !(play.to_i.positive? && play.to_i <= 9)
+      play = gets.chomp.to_i
+      if plays[play - 1] == 'X' || plays[play - 1] == 'O' || !(play.to_i.positive? && play.to_i <= 9)
+        puts 'Ops, it seems you did not type a number between 1-9 OR someone already choosen this slot before :/'
+      end
     end
+    play
   end
-  play
 end
+
+gameplay_instance = Gameplay.new
 
 call_for_play_phrases = []
 call_for_play_phrases << 'So now, PLAYER, could you please choose one of the slots in the board?'
@@ -89,7 +94,7 @@ comment_play_phrases << 'Wow!!! Now I see your potential!'
     char = 'O'
   end
   puts call_for_play_phrases[rand(call_for_play_phrases.size - 1)].gsub('PLAYER', player)
-  play = catch_play(plays)
+  play = gameplay_instance.catch_play(plays)
   plays[play - 1] = char
   puts gameboard_instance.print_board(plays)
   game_instance = Game.new
