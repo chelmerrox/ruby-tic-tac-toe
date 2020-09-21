@@ -7,18 +7,29 @@ require_relative '../lib/classes.rb'
 puts 'Welcome to our Tic-Tac-Toe Game!'
 
 puts 'Player 1, please type your beautiful name?'
-player_one = Player.new(gets.chomp, 'X')
+player_one_name = gets.chomp
+while player_one_name == ''
+  puts 'Hey, please, tell us your name :)'
+  player_one_name = gets.chomp
+end
+player_one = Player.new(player_one_name, 'X')
 puts "Nice name #{player_one.name}!"
 puts 'Players, you are going to be represented by the "X" characters on the board, right? (Press enter to continue)'
 gets.chomp
 
 puts 'Player 2, how could we call this beautiful face?'
-player_two = Player.new(gets.chomp, 'O')
+player_two_name = gets.chomp
+while player_two_name == ''
+  puts 'Hey, please, tell us your name :)'
+  player_two_name = gets.chomp
+end
+player_two = Player.new(player_two_name, 'O')
+
 puts "Huuummmm #{player_two.name}, I was pretty aware that your name would be also beautiful!"
-puts "#{player_two.name}, you are going to be the 'O' character, nice? (Press enter to continue)"
+puts "As #{player_one.name} is already using the 'X' character, you are going to be the 'O' character, nice?"
 gets.chomp
 
-puts "#{player_one.name} and #{player_two.name}, swear you won't forget your characters? (Press enter to continue)"
+puts "#{player_one.name} and #{player_two.name}, please promise me you won't forget your characters?"
 gets.chomp
 
 puts "Ok #{player_one.name} and #{player_two.name}, lets to the nuts and bolts!"
@@ -66,7 +77,7 @@ comment_play_phrases << 'You never played this before, right?'
 comment_play_phrases << '... so amateur'
 comment_play_phrases << 'Wow!!! Now I see your potential!'
 
-unless game_instance.check_winner(plays)
+9.times do |i|
   char = 'X'
   if i.even?
     player = player_one.name.dup
@@ -79,7 +90,6 @@ unless game_instance.check_winner(plays)
   plays[play - 1] = char
   puts print_board(plays)
   game_instance = Game.new
-  puts "check_winner = #{game_instance.check_winner(plays)}"
   if game_instance.check_winner(plays) == true
     puts "Congratulations, #{player}! You are the winner!"
     break
