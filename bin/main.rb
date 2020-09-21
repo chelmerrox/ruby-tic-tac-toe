@@ -1,3 +1,4 @@
 #!/usr/bin/env ruby
-
-puts 'Hello!'
+# rubocop:disable Lint/ScriptPermission
+puts 'Hello!!'
+# rubocop:enable Lint/ScriptPermission
