@@ -33,8 +33,6 @@ class Game
 
     boards_for_win.each do |board|
       winner_board = [plays[board[0] - 1], plays[board[1] - 1], plays[board[2] - 1]]
-      puts "winner_board & ['X'] = #{winner_board & ['X']}"
-      puts "winner_board & ['O'] = #{winner_board & ['O']}"
       draw = false if winner_board & ['X'] == [] || winner_board & ['O'] == []
     end
 
