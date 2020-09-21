@@ -26,10 +26,10 @@ end
 player_two = Player.new(player_two_name, 'O')
 
 puts "Huuummmm #{player_two.name}, I was pretty aware that your name would be also beautiful!"
-puts "As #{player_one.name} is already using the 'X' character, you are going to be the 'O' character, nice?"
+puts "As #{player_one.name} is already using the 'X' character, you are going to be the 'O' character, nice? (Press Enter)"
 gets.chomp
 
-puts "#{player_one.name} and #{player_two.name}, please promise me you won't forget your characters?"
+puts "#{player_one.name} and #{player_two.name}, please promise me you won't forget your characters? (Press Enter)"
 gets.chomp
 
 puts "Ok #{player_one.name} and #{player_two.name}, lets to the nuts and bolts!"
