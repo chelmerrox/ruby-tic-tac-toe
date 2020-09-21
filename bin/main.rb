@@ -87,7 +87,7 @@ end
   play = catch_play(plays)
   plays[play - 1] = char
   puts print_board(plays)
-  puts "check_winner = #{check_winner(plays, player_one_name, player_two_name)}"
+  puts "check_winner = #{check_winner(plays)}"
   if check_winner(plays) == true
     puts "Congratulations, #{player}! You are the winner!"
     break
