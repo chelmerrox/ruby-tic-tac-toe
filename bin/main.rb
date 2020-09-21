@@ -2,7 +2,7 @@
 
 # !/usr/bin/env ruby
 
-require '../lib/classes.rb'
+require_relative '../lib/classes.rb'
 
 puts 'Welcome to our Tic-Tac-Toe Game!'
 
@@ -66,7 +66,7 @@ comment_play_phrases << 'You never played this before, right?'
 comment_play_phrases << '... so amateur'
 comment_play_phrases << 'Wow!!! Now I see your potential!'
 
-9.times do |i|
+unless game_instance.check_winner(plays)
   char = 'X'
   if i.even?
     player = player_one.name.dup
