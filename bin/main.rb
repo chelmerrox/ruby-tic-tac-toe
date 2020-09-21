@@ -7,13 +7,24 @@ require_relative '../lib/classes.rb'
 puts 'Welcome to our Tic-Tac-Toe Game!'
 
 puts 'Player 1, please type your beautiful name?'
-player_one = Player.new(gets.chomp, 'X')
+player_one_name = gets.chomp
+while player_one_name == ''
+  puts 'Hey, please, tell us your name :)'
+  player_one_name = gets.chomp
+end
+player_one = Player.new(player_one_name, 'X')
 puts "Nice name #{player_one.name}!"
 puts 'Players, you are going to be represented by the "X" characters on the board, right? (Press enter to continue)'
 gets.chomp
 
 puts 'Player 2, how could we call this beautiful face?'
-player_two = Player.new(gets.chomp, 'O')
+player_two_name = gets.chomp
+while player_two_name == ''
+  puts 'Hey, please, tell us your name :)'
+  player_two_name = gets.chomp
+end
+player_two = Player.new(player_two_name,'O')
+
 puts "Huuummmm #{player_two.name}, I was pretty aware that your name would be also beautiful!"
 puts "As #{player_one.name} is already using the 'X' character, you are going to be the 'O' character, nice?"
 gets.chomp
@@ -79,7 +90,6 @@ comment_play_phrases << 'Wow!!! Now I see your potential!'
   plays[play - 1] = char
   puts print_board(plays)
   game_instance = Game.new
-  puts "check_winner = #{game_instance.check_winner(plays)}"
   if game_instance.check_winner(plays) == true
     puts "Congratulations, #{player}! You are the winner!"
     break
