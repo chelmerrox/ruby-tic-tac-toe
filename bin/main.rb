@@ -2,24 +2,26 @@
 
 # !/usr/bin/env ruby
 
+require '../lib/classes.rb'
+
 puts 'Welcome to our Tic-Tac-Toe Game!'
 
 puts 'Player 1, please type your beautiful name?'
-player_one_name = gets.chomp
-puts "Nice name #{player_one_name}!"
+player_one = Player.new(gets.chomp, 'X')
+puts "Nice name #{player_one.name}!"
 puts 'Please, notice that, from now on, you are going to be represented by the "X" characters on the board, right?'
 gets.chomp
 
 puts 'Player 2, how could we call this beautiful face?'
-player_two_name = gets.chomp
-puts "Huuummmm #{player_two_name}, I was pretty aware that your name would be also beautiful!"
-puts "As #{player_one_name} is already using the 'X' character, you are going to be the 'O' character, nice?"
+player_two = Player.new(gets.chomp, 'O')
+puts "Huuummmm #{player_two.name}, I was pretty aware that your name would be also beautiful!"
+puts "As #{player_one.name} is already using the 'X' character, you are going to be the 'O' character, nice?"
 gets.chomp
 
-puts "#{player_one_name} and #{player_two_name}, please promise me you won't forget your characters?"
+puts "#{player_one.name} and #{player_two.name}, please promise me you won't forget your characters?"
 gets.chomp
 
-puts "Ok #{player_one_name} and #{player_two_name}, lets to the nuts and bolts!"
+puts "Ok #{player_one.name} and #{player_two.name}, lets to the nuts and bolts!"
 puts 'Here is the board of your game, with the respective number for each position, ok?'
 plays = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -64,49 +66,24 @@ comment_play_phrases << 'You never played this before, right?'
 comment_play_phrases << '... so amateur'
 comment_play_phrases << 'Wow!!! Now I see your potential!'
 
-
-winner_boards = [[1, 2, 3], [1, 4, 7], [1, 5, 9], [2, 5, 8], [3, 5, 7], [3, 6, 9], [4, 5, 6], [7, 8, 9]]
-
-def check_winner(plays, winner_boards)
-  win = false
-  winner_boards.each do |board|
-    first_char = plays[board[0] - 1]
-    win = [plays[board[0] - 1], plays[board[1] - 1], plays[board[2] - 1]] == [first_char, first_char, first_char]
-    break if win
-  end
-  win
-end
-
-def check_draw(plays, winner_boards)
-    draw = true
-
-    winner_boards.each do |board|
-      winner_board = [plays[board[0] - 1], plays[board[1] - 1], plays[board[2] - 1]]
-      puts "winner_board & ['X'] = #{winner_board & ['X']}"
-      puts "winner_board & ['O'] = #{winner_board & ['O']}"
-      draw = false if winner_board & ['X'] == [] || winner_board & ['O'] == []
-    end
-
-    draw
-end
-
 9.times do |i|
   char = 'X'
   if i.even?
-    player = player_one_name.dup
+    player = player_one.name.dup
   else
-    player = player_two_name.dup
+    player = player_two.name.dup
     char = 'O'
   end
   puts call_for_play_phrases[rand(call_for_play_phrases.size - 1)].gsub('PLAYER', player)
   play = catch_play(plays)
   plays[play - 1] = char
   puts print_board(plays)
-  puts "check_winner = #{check_winner(plays, winner_boards)}"
-  if check_winner(plays, winner_boards) == true
+  game_instance = Game.new
+  puts "check_winner = #{game_instance.check_winner(plays)}"
+  if game_instance.check_winner(plays) == true
     puts "Congratulations, #{player}! You are the winner!"
     break
-  elsif check_draw(plays, winner_boards) == true
+  elsif game_instance.check_draw(plays) == true
     puts "It's a draw!"
     break
   end
