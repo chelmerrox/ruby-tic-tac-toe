@@ -6,13 +6,13 @@
 
 ## Built With
 
-- Ruby!chmo
+- Ruby (version <= 2.7.0p0)
 
 ## Live Demo
 
 [Live Demo Link]()
 
-## Author
+## Authors
 
 👤 Luciano Sarno
 
@@ -22,8 +22,8 @@
 
 👤 Losalini Rokocakau
 
-- Github: [@chelmerrox](https://github.com/AdesojiCodeMaster)
-- Linkedin: [@losalini-rokocakau/](https://www.linkedin.com/in/losalini-rokocakau/)
+- Github: [@chelmerrox](https://github.com/chelmerrox)
+- Linkedin: [@losalini-rokocakau/](https://www.linkedin.com/in/losalini-rokocakau)
 
 ## 🤝 Contributing
 
