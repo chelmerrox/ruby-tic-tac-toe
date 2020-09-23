@@ -27,7 +27,7 @@ end
 
 while player_two_name.eql?(player_one_name)
   puts "Oh, you have the same name as #{player_one.name}!"
-  puts "Please choose another name for yourself to avoid any confusion. :D"
+  puts 'Please choose another name for yourself to avoid any confusion. :D'
   player_two_name = gets.chomp
 end
 

@@ -1,4 +1,3 @@
-# rubocop:disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
 class Player
   attr_reader :name
 
@@ -7,5 +6,3 @@ class Player
     @character = character
   end
 end
-
-# rubocop:enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
