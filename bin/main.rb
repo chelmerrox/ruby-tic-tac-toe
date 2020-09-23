@@ -1,6 +1,9 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/classes.rb'
+require_relative '../lib/player.rb'
+require_relative '../lib/gameboard.rb'
+require_relative '../lib/gameplay.rb'
+require_relative '../lib/game.rb'
 
 puts 'Welcome to our Tic-Tac-Toe Game!'
 
