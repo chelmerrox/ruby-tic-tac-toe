@@ -62,14 +62,6 @@ end
 
 gameplay_instance = Gameplay.new
 
-def print_board(plays)
-  puts " #{plays[0]} | #{plays[1]} | #{plays[2]}"
-  puts " #{plays[3]} | #{plays[4]} | #{plays[5]}"
-  puts " #{plays[6]} | #{plays[7]} | #{plays[8]}"
-end
-
-puts print_board(plays)
-
 def catch_play(plays)
   play = play.to_i
   while plays[play - 1] == 'X' || plays[play - 1] == 'O' || !(play.to_i.positive? && play.to_i <= 9)
@@ -113,7 +105,7 @@ comment_play_phrases << 'Wow!!! Now I see your potential!'
     char = 'O'
   end
   puts call_for_play_phrases[rand(call_for_play_phrases.size - 1)].gsub('PLAYER', player)
-  
+
   play = gameplay_instance.catch_play(plays)
   plays[play - 1] = char
   puts gameboard_instance.print_board(plays)
