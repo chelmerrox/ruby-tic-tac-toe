@@ -1,4 +1,3 @@
-
 #!/usr/bin/env ruby
 
 # rubocop:disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
@@ -39,29 +38,8 @@ puts "Ok #{player_one.name} and #{player_two.name}, lets to the nuts and bolts!"
 puts 'Here is the board of your game, with the respective number for each position, ok?'
 plays = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-class Gameboard
-  def print_board(plays)
-    puts " #{plays[0]} | #{plays[1]} | #{plays[2]}"
-    puts " #{plays[3]} | #{plays[4]} | #{plays[5]}"
-    puts " #{plays[6]} | #{plays[7]} | #{plays[8]}"
-  end
-end
-
 gameboard_instance = Gameboard.new
 puts gameboard_instance.print_board(plays)
-
-class Gameplay
-  def catch_play(plays)
-    play = play.to_i
-    while plays[play - 1] == 'X' || plays[play - 1] == 'O' || !(play.to_i.positive? && play.to_i <= 9)
-      play = gets.chomp.to_i
-      if plays[play - 1] == 'X' || plays[play - 1] == 'O' || !(play.to_i.positive? && play.to_i <= 9)
-        puts 'Ops, it seems you did not type a number between 1-9 OR someone already choosen this slot before :/'
-      end
-    end
-    play
-  end
-end
 
 gameplay_instance = Gameplay.new
 
