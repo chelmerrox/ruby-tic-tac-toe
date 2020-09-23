@@ -2,7 +2,7 @@
 class Game
     def initialize; end
   
-    def check_winner(plays, boards_for_win = [])
+    def check_winner?(plays, boards_for_win = [])
       if boards_for_win == []
         boards_for_win = [[1, 2, 3], [1, 4, 7], [1, 5, 9], [2, 5, 8], [3, 5, 7], [3, 6, 9], [4, 5, 6], [7, 8, 9]]
       end
@@ -16,7 +16,7 @@ class Game
       win
     end
   
-    def check_draw(plays, boards_for_win = [])
+    def check_draw?(plays, boards_for_win = [])
       if boards_for_win == []
         boards_for_win = [[1, 2, 3], [1, 4, 7], [1, 5, 9], [2, 5, 8], [3, 5, 7], [3, 6, 9], [4, 5, 6], [7, 8, 9]]
       end
@@ -32,4 +32,3 @@ class Game
     end
   end
   # rubocop:enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
-  

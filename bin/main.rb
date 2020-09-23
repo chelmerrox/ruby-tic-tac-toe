@@ -82,10 +82,10 @@ comment_play_phrases << 'Wow!!! Now I see your potential!'
   puts gameboard_instance.print_board(plays)
 
   game_instance = Game.new
-  if game_instance.check_winner(plays) == true
+  if game_instance.check_winner?(plays) == true
     puts "Congratulations, #{player}! You are the winner!"
     break
-  elsif game_instance.check_draw(plays) == true
+  elsif game_instance.check_draw?(plays) == true
     puts "It's a draw!"
     break
   end
