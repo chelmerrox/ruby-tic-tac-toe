@@ -77,7 +77,7 @@ comment_play_phrases << 'Wow!!! Now I see your potential!'
   play = gameplay_instance.catch_play(plays)
   plays[play - 1] = char
   puts gameboard_instance.print_board(plays)
-  
+
   game_instance = Game.new
   if game_instance.check_winner(plays) == true
     puts "Congratulations, #{player}! You are the winner!"
