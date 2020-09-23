@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-# rubocop:disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
-
 require_relative '../lib/classes.rb'
 
 puts 'Welcome to our Tic-Tac-Toe Game!'
@@ -27,7 +25,7 @@ player_two = Player.new(player_two_name, 'O')
 
 puts "Huuummmm #{player_two.name}, I was pretty aware that your name would be also beautiful!"
 
-puts "As #{player_one.name} is already using the 'X' character, you are going to be the 'O' character, nice? (Press Enter)"
+puts "As #{player_one.name} is using the 'X' character, you're using the 'O' character, ok? (Press Enter)"
 gets.chomp
 
 puts "#{player_one.name} and #{player_two.name}, please promise me you won't forget your characters? (Press Enter)"
@@ -89,5 +87,3 @@ comment_play_phrases << 'Wow!!! Now I see your potential!'
     break
   end
 end
-
-# rubocop:enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
