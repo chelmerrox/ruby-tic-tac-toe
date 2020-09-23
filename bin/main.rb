@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-# rubocop:disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
-
-# !/usr/bin/env ruby
-=======
 #!/usr/bin/env ruby
 
 # rubocop:disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
->>>>>>> development
 
 require_relative '../lib/classes.rb'
 
@@ -32,24 +26,16 @@ end
 player_two = Player.new(player_two_name, 'O')
 
 puts "Huuummmm #{player_two.name}, I was pretty aware that your name would be also beautiful!"
-<<<<<<< HEAD
+
 puts "As #{player_one.name} is already using the 'X' character, you are going to be the 'O' character, nice? (Press Enter)"
 gets.chomp
 
 puts "#{player_one.name} and #{player_two.name}, please promise me you won't forget your characters? (Press Enter)"
-=======
-puts "As #{player_one.name} is already using the 'X' character, you are going to be the 'O' character, nice?"
-gets.chomp
-
-puts "#{player_one.name} and #{player_two.name}, please promise me you won't forget your characters?"
->>>>>>> development
-gets.chomp
 
 puts "Ok #{player_one.name} and #{player_two.name}, lets to the nuts and bolts!"
 puts 'Here is the board of your game, with the respective number for each position, ok?'
 plays = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-<<<<<<< HEAD
 class Gameboard
   def print_board(plays)
     puts " #{plays[0]} | #{plays[1]} | #{plays[2]}"
@@ -76,7 +62,6 @@ end
 
 gameplay_instance = Gameplay.new
 
-=======
 def print_board(plays)
   puts " #{plays[0]} | #{plays[1]} | #{plays[2]}"
   puts " #{plays[3]} | #{plays[4]} | #{plays[5]}"
@@ -96,7 +81,6 @@ def catch_play(plays)
   play
 end
 
->>>>>>> development
 call_for_play_phrases = []
 call_for_play_phrases << 'So now, PLAYER, could you please choose one of the slots in the board?'
 call_for_play_phrases << 'PLAYER, now it\'s your turn!'
@@ -129,15 +113,10 @@ comment_play_phrases << 'Wow!!! Now I see your potential!'
     char = 'O'
   end
   puts call_for_play_phrases[rand(call_for_play_phrases.size - 1)].gsub('PLAYER', player)
-<<<<<<< HEAD
+  
   play = gameplay_instance.catch_play(plays)
   plays[play - 1] = char
   puts gameboard_instance.print_board(plays)
-=======
-  play = catch_play(plays)
-  plays[play - 1] = char
-  puts print_board(plays)
->>>>>>> development
   game_instance = Game.new
   if game_instance.check_winner(plays) == true
     puts "Congratulations, #{player}! You are the winner!"
