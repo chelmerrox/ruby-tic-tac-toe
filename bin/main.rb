@@ -1,6 +1,4 @@
-# rubocop:disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
-
-# !/usr/bin/env ruby
+#!/usr/bin/env ruby
 
 require_relative '../lib/classes.rb'
 
@@ -98,5 +96,3 @@ comment_play_phrases << 'Wow!!! Now I see your potential!'
     break
   end
 end
-
-# rubocop:enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
