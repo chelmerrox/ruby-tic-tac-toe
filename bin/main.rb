@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# rubocop:disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
+
 require_relative '../lib/classes.rb'
 
 puts 'Welcome to our Tic-Tac-Toe Game!'
@@ -41,6 +43,7 @@ def print_board(plays)
 end
 
 puts print_board(plays)
+
 def catch_play(plays)
   play = play.to_i
   while plays[play - 1] == 'X' || plays[play - 1] == 'O' || !(play.to_i.positive? && play.to_i <= 9)
@@ -96,3 +99,5 @@ comment_play_phrases << 'Wow!!! Now I see your potential!'
     break
   end
 end
+
+# rubocop:enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
