@@ -1,8 +1,6 @@
 #!/usr/bin/env ruby
 
 require_relative '../lib/player.rb'
-require_relative '../lib/gameboard.rb'
-require_relative '../lib/gameplay.rb'
 require_relative '../lib/game.rb'
 
 puts 'Welcome to our Tic-Tac-Toe Game!'
@@ -52,10 +50,9 @@ def print_board(plays)
   puts " #{plays[6]} | #{plays[7]} | #{plays[8]}"
 end
 
-
 print_board(plays)
 
-gameplay_instance = Gameplay.new
+#gameplay_instance = Gameplay.new
 
 call_for_play_phrases = []
 call_for_play_phrases << 'So now, PLAYER, could you please choose one of the slots in the board?'
@@ -90,7 +87,14 @@ comment_play_phrases << 'Wow!!! Now I see your potential!'
   end
   puts call_for_play_phrases[rand(call_for_play_phrases.size - 1)].gsub('PLAYER', player)
 
-  play = gameplay_instance.catch_play(plays)
+  play = play.to_i
+  while plays[play - 1] == 'X' || plays[play - 1] == 'O' || !(play.to_i.positive? && play.to_i <= 9)
+    play = gets.chomp.to_i
+    if plays[play - 1] == 'X' || plays[play - 1] == 'O' || !(play.to_i.positive? && play.to_i <= 9)
+      puts 'Ops, it seems you did not type a number between 1-9 OR someone already choosen this slot before :/'
+    end
+  end
+
   plays[play - 1] = char
   print_board(plays)
 
