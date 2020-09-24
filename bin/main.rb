@@ -46,8 +46,14 @@ puts "Ok #{player_one.name} and #{player_two.name}, lets to the nuts and bolts!"
 puts 'Here is the board of your game, with the respective number for each position, ok?'
 plays = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-gameboard_instance = Gameboard.new
-puts gameboard_instance.print_board(plays)
+def print_board(plays)
+  puts " #{plays[0]} | #{plays[1]} | #{plays[2]}"
+  puts " #{plays[3]} | #{plays[4]} | #{plays[5]}"
+  puts " #{plays[6]} | #{plays[7]} | #{plays[8]}"
+end
+
+
+print_board(plays)
 
 gameplay_instance = Gameplay.new
 
@@ -86,7 +92,7 @@ comment_play_phrases << 'Wow!!! Now I see your potential!'
 
   play = gameplay_instance.catch_play(plays)
   plays[play - 1] = char
-  puts gameboard_instance.print_board(plays)
+  print_board(plays)
 
   game_instance = Game.new
   if game_instance.check_winner?(plays) == true
