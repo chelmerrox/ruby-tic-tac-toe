@@ -6,7 +6,7 @@
 
 ## Built With
 
-- Ruby (version <= 2.7.0p0)
+- Ruby1 (version <= 2.7.0p0)
 
 ## Live Demo
 
