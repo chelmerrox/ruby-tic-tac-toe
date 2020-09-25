@@ -94,6 +94,4 @@ call_for_play_phrases << 'PLAYER, please don\'t make us wait more'
   end
 end
 
-
-
 #---------Remove this comment---------
