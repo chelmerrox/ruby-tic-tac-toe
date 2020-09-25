@@ -63,18 +63,6 @@ call_for_play_phrases << 'PLAYER, please choose your slot, we don\'t have all th
 call_for_play_phrases << 'PLAYER, we are waiting for you...'
 call_for_play_phrases << 'PLAYER, please don\'t make us wait more'
 
-comment_play_phrases = []
-comment_play_phrases << 'Huummm... wise fox play!'
-comment_play_phrases << 'WoW! I\'m noticing this will be a giant\'s game!'
-comment_play_phrases << 'Huummm!'
-comment_play_phrases << 'ok'
-comment_play_phrases << 'Hey, how many years did you study this game?'
-comment_play_phrases << 'Couldn\'t you think something better than this??'
-comment_play_phrases << 'Well I don\'t like this play, but anyway...'
-comment_play_phrases << 'You never played this before, right?'
-comment_play_phrases << '... so amateur'
-comment_play_phrases << 'Wow!!! Now I see your potential!'
-
 9.times do |i|
   char = 'X'
   if i.even?
