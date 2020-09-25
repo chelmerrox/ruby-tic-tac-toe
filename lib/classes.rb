@@ -5,6 +5,11 @@ class Player
     @name = name
     @character = character
   end
+
+  def additional_method
+    result = 1+1
+  end
+    
 end
 
 class Game
