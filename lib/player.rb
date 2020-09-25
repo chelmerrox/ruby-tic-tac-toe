@@ -10,5 +10,3 @@ class Player
     puts 1
   end
 end
-
-#----
