@@ -1,16 +1,16 @@
-def winning_board(boards_for_win = [])
-  boards_for_win << [1, 2, 3]
-  boards_for_win << [1, 4, 7]
-  boards_for_win << [1, 5, 9]
-  boards_for_win << [2, 5, 8]
-  boards_for_win << [3, 5, 7]
-  boards_for_win << [3, 6, 9]
-  boards_for_win << [4, 5, 6]
-  boards_for_win << [7, 8, 9]
-end
-
 class Game
   def initialize; end
+
+  def winning_board(boards_for_win = [])
+    boards_for_win << [1, 2, 3]
+    boards_for_win << [1, 4, 7]
+    boards_for_win << [1, 5, 9]
+    boards_for_win << [2, 5, 8]
+    boards_for_win << [3, 5, 7]
+    boards_for_win << [3, 6, 9]
+    boards_for_win << [4, 5, 6]
+    boards_for_win << [7, 8, 9]
+  end
 
   def check_winner?(plays, boards_for_win = [])
     winning_board(boards_for_win) if boards_for_win == []
