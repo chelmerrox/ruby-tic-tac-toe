@@ -1,3 +1,20 @@
+<<<<<<< HEAD:lib/game.rb
+=======
+class Player
+  attr_reader :name
+
+  def initialize(name, character)
+    @name = name
+    @character = character
+  end
+
+  def additional_method
+    result = 1+1
+  end
+    
+end
+
+>>>>>>> 0e5b6049883c76ef170d96d66514cb2bf3cef8e6:lib/classes.rb
 class Game
   def initialize; end
 
