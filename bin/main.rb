@@ -52,8 +52,6 @@ end
 
 print_board(plays)
 
-# gameplay_instance = Gameplay.new
-
 call_for_play_phrases = []
 call_for_play_phrases << 'So now, PLAYER, could you please choose one of the slots in the board?'
 call_for_play_phrases << 'PLAYER, now it\'s your turn!'
