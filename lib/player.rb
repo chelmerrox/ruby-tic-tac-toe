@@ -6,7 +6,8 @@ class Player
     @character = character
   end
 
-  def additional_method
-    result = 1+1
+  def additional_method(character)
+    @character
+    result = 1 + 1
   end
 end
