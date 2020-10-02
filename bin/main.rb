@@ -1,25 +1,46 @@
-# rubocop:disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
+#!/usr/bin/env ruby
 
-# !/usr/bin/env ruby
+require_relative '../lib/player.rb'
+require_relative '../lib/game.rb'
 
 puts 'Welcome to our Tic-Tac-Toe Game!'
 
 puts 'Player 1, please type your beautiful name?'
 player_one_name = gets.chomp
-puts "Nice name #{player_one_name}!"
-puts 'Please, notice that, from now on, you are going to be represented by the "X" characters on the board, right?'
+while player_one_name == ''
+  puts 'Hey, please, tell us your name :)'
+  player_one_name = gets.chomp
+end
+player_one = Player.new(player_one_name, 'X')
+puts "Nice name #{player_one.name}!"
+puts 'Players, you are going to be represented by the "X" characters on the board, right? (Press enter to continue)'
 gets.chomp
 
 puts 'Player 2, how could we call this beautiful face?'
 player_two_name = gets.chomp
-puts "Huuummmm #{player_two_name}, I was pretty aware that your name would be also beautiful!"
-puts "As #{player_one_name} is already using the 'X' character, you are going to be the 'O' character, nice?"
+while player_two_name == ''
+  puts 'Hey, please, tell us your name :)'
+  player_two_name = gets.chomp
+end
+
+while player_two_name.eql?(player_one_name)
+  puts "Oh, you have the same name as #{player_one.name}!"
+  puts 'Please choose another name for yourself to avoid any confusion. :D'
+  player_two_name = gets.chomp
+end
+
+player_two = Player.new(player_two_name, 'O')
+
+puts "Huuummmm #{player_two.name}, I was pretty aware that your name would be also beautiful!"
+
+puts "As #{player_one.name} is using the 'X' character, you're using the 'O' character, ok? (Press Enter)"
 gets.chomp
 
-puts "#{player_one_name} and #{player_two_name}, please promise me you won't forget your characters?"
+puts "#{player_one.name} and #{player_two.name}, please promise me you won't forget your characters? (Press Enter)"
+
 gets.chomp
 
-puts "Ok #{player_one_name} and #{player_two_name}, lets to the nuts and bolts!"
+puts "Ok #{player_one.name} and #{player_two.name}, lets to the nuts and bolts!"
 puts 'Here is the board of your game, with the respective number for each position, ok?'
 plays = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -29,17 +50,7 @@ def print_board(plays)
   puts " #{plays[6]} | #{plays[7]} | #{plays[8]}"
 end
 
-puts print_board(plays)
-def catch_play(plays)
-  play = play.to_i
-  while plays[play - 1] == 'X' || plays[play - 1] == 'O' || !(play.to_i.positive? && play.to_i <= 9)
-    play = gets.chomp.to_i
-    if plays[play - 1] == 'X' || plays[play - 1] == 'O' || !(play.to_i.positive? && play.to_i <= 9)
-      puts 'Ops, it seems you did not type a number between 1-9 OR someone already choosen this slot before :/'
-    end
-  end
-  play
-end
+print_board(plays)
 
 call_for_play_phrases = []
 call_for_play_phrases << 'So now, PLAYER, could you please choose one of the slots in the board?'
@@ -52,46 +63,33 @@ call_for_play_phrases << 'PLAYER, please choose your slot, we don\'t have all th
 call_for_play_phrases << 'PLAYER, we are waiting for you...'
 call_for_play_phrases << 'PLAYER, please don\'t make us wait more'
 
-comment_play_phrases = []
-comment_play_phrases << 'Huummm... wise fox play!'
-comment_play_phrases << 'WoW! I\'m noticing this will be a giant\'s game!'
-comment_play_phrases << 'Huummm!'
-comment_play_phrases << 'ok'
-comment_play_phrases << 'Hey, how many years did you study this game?'
-comment_play_phrases << 'Couldn\'t you think something better than this??'
-comment_play_phrases << 'Well I don\'t like this play, but anyway...'
-comment_play_phrases << 'You never played this before, right?'
-comment_play_phrases << '... so amateur'
-comment_play_phrases << 'Wow!!! Now I see your potential!'
-
-def check_winner(plays)
-  winner_boards = [[1, 2, 3], [1, 4, 7], [1, 5, 9], [2, 5, 8], [3, 5, 7], [3, 6, 9], [4, 5, 6], [7, 8, 9]]
-  win = false
-  winner_boards.each do |board|
-    first_char = plays[board[0] - 1]
-    win = [plays[board[0] - 1], plays[board[1] - 1], plays[board[2] - 1]] == [first_char, first_char, first_char]
-    break if win
-  end
-  win
-end
-
 9.times do |i|
   char = 'X'
   if i.even?
-    player = player_one_name.dup
+    player = player_one.name.dup
   else
-    player = player_two_name.dup
+    player = player_two.name.dup
     char = 'O'
   end
   puts call_for_play_phrases[rand(call_for_play_phrases.size - 1)].gsub('PLAYER', player)
-  play = catch_play(plays)
+
+  play = play.to_i
+  while plays[play - 1] == 'X' || plays[play - 1] == 'O' || !(play.to_i.positive? && play.to_i <= 9)
+    play = gets.chomp.to_i
+    if plays[play - 1] == 'X' || plays[play - 1] == 'O' || !(play.to_i.positive? && play.to_i <= 9)
+      puts 'Ops, it seems you did not type a number between 1-9 OR someone already choosen this slot before :/'
+    end
+  end
+
   plays[play - 1] = char
-  puts print_board(plays)
-  puts "check_winner = #{check_winner(plays, player_one_name, player_two_name)}"
-  if check_winner(plays) == true
+  print_board(plays)
+
+  game_instance = Game.new
+  if game_instance.check_winner?(plays) == true
     puts "Congratulations, #{player}! You are the winner!"
+    break
+  elsif game_instance.check_draw?(plays) == true
+    puts "It's a draw!"
     break
   end
 end
-
-# rubocop:enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
