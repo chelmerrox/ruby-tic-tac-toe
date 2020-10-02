@@ -7,6 +7,6 @@ class Player
   end
 
   def additional_method
-    result = 1+1
+    puts 1
   end
 end
