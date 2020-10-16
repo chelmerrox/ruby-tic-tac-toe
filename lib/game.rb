@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
-# remove lint err
-
+# This class covers the methods check_draw and check_winner
 class Game
-  #
   def initialize; end
 
   def winning_board(boards_for_win = [])
