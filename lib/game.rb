@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# This class contains methods used for check win and draw
 class Game
   def initialize; end
 

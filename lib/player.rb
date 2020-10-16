@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# this class covers declaration for each player
 class Player
   attr_reader :name
 
