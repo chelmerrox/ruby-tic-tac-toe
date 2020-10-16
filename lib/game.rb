@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+# remove lint err
+
 class Game
   def initialize; end
 
