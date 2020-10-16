@@ -3,6 +3,7 @@
 # remove lint err
 
 class Game
+  #
   def initialize; end
 
   def winning_board(boards_for_win = [])
