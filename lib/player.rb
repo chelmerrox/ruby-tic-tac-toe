@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This class covers the method for create new player
 class Player
   attr_reader :name

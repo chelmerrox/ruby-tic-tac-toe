@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-# frozen_string_literal: true
 
 require_relative '../lib/player.rb'
 require_relative '../lib/game.rb'
