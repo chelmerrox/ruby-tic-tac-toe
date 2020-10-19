@@ -1,4 +1,4 @@
-# RSpec test for the Tic-Tac-Toe Game
+# RSpec test for the 'Tic-Tac-Toe' Game
 
 > In this project, we were required to write RSpec for the Tic-Tac-Toe game.
 
