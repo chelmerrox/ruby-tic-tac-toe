@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative './lib/game.rb'
+require_relative '../lib/game.rb'
 
 describe Game do
   let(:game_win_1) { Game.new }
