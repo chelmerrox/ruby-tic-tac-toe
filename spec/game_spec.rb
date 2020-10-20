@@ -1,3 +1,5 @@
+# rubocop:disable Layout/LineLength
+
 require_relative '../lib/game.rb'
 
 describe Game do
@@ -25,3 +27,4 @@ describe Game do
     end
   end
 end
+# rubocop:enable Layout/LineLength
