@@ -3,6 +3,7 @@ class Game
   def initialize; end
 
   def winning_board(boards_for_win = [])
+    boards_for_win = []
     boards_for_win << [1, 2, 3]
     boards_for_win << [1, 4, 7]
     boards_for_win << [1, 5, 9]
