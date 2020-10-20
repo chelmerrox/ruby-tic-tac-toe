@@ -1,3 +1,4 @@
+# This class covers the method for create new player
 class Player
   attr_reader :name
 

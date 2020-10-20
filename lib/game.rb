@@ -1,3 +1,4 @@
+# This class covers the methods check_draw and check_winner
 class Game
   def initialize; end
 
